@@ -26,7 +26,7 @@ var files = {
 };
 
 module.exports = function(grunt) {
-
+    var target = grunt.option('target') || 'http://localhost:9000';
     //load all npm tasks automagically
     require('load-grunt-tasks')(grunt);
 
@@ -138,7 +138,7 @@ module.exports = function(grunt) {
                 port: 9000,
                 // Change this to '0.0.0.0' to access the server from outside.
                 hostname: '0.0.0.0',
-                livereload: 35729
+                livereload: 35730
             },
             livereload: {}
         },
@@ -149,12 +149,42 @@ module.exports = function(grunt) {
                     output: 'docs/'
                 }
             }
+        },
+        openfin: {
+            options: {
+                open: true,
+                configPath: target + '/app.json',
+                config: {
+                    create: true,
+                    filePath: 'app.json',
+                    options: {
+                        startup_app: {
+                            name: 'Tear-out-demo ',
+                            url: target + '/index.html',
+                        },
+                        runtime: {
+                            version: "alpha"
+                        }
+                    }
+                }
+            },
+            serve: {
+                options: {
+                    open: true
+                }
+            },
+            build: {
+                options: {
+                    open: false
+                }
+            }
         }
     });
 
     grunt.registerTask('default', function() {
         return grunt.task.run([
             'connect:livereload',
+            'openfin:serve',
             'watch'
         ]);
     });

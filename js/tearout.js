@@ -210,7 +210,7 @@ var initDragAndDrop = function(config) {
             .disableDocumentElementSelection()
             .setOffsetX(e.offsetX)
             .setOffsetY(e.offsetY)
-            .moveDropTarget(e.screenX - me.offsetX, e.screenY - me.offsetY)
+            .moveDropTarget(e.screenX -me.offsetX, e.screenY - me.offsetY)
             .clearIncomingTearoutWindow()
             .appendToOpenfinWindow(me.element, me.tearoutWindow)
             .setInTearout(true)

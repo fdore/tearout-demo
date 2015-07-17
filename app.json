@@ -3,9 +3,9 @@
     "desktop_core_url": "https://demoappdirectory.openf.in/desktop/desktopcore/2.0.7/index.html",
     "desktop_controller_url": "https://demoappdirectory.openf.in/desktop/desktopcontroller/2.0.7/index.html",
     "startup_app": {
-        "name": "Tearout",
+        "name": "Tear-out-demo ",
         "uuid": "tearout-main",
-        "url": "https://demoappdirectory.openf.in/desktop/deploy/tearout-demo/index.html",
+        "url": "http://localhost:4000/index.html",
         "autoShow": true,
         "resizable": true,
         "maximizable": true,
@@ -16,7 +16,7 @@
     },
     "runtime": {
         "arguments": "",
-        "version" : "latest"
+        "version": "alpha"
     },
     "shortcut": {
         "company": "OpenFin",
